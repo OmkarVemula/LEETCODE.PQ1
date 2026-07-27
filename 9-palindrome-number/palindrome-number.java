@@ -1,14 +1,18 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        boolean y=true;
-        String s= String.valueOf(x);
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)!= s.charAt(s.length()-(i+1))){
-                y=false;
-                return y;
-            }
-
+        if (x<0){
+            return false;
         }
-        return y;
+        int rev=0;
+        int cons=x;
+        while(cons!=0){
+            int y = cons%10;
+            rev=rev*10 + y;
+            cons=cons/10;
+        }
+        if (rev==x){
+            return true;
+        }
+        return false;
     }
 }
