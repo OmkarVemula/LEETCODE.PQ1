@@ -10,9 +10,8 @@ class Solution {
             rev=rev*10 + y;
             cons=cons/10;
         }
-        if (rev==x){
-            return true;
-        }
-        return false;
+        
+        return x==rev;
+        
     }
 }
