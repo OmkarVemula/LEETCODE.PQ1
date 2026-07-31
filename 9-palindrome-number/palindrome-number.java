@@ -3,16 +3,19 @@ class Solution {
         if(x<0){
             return false;
         }
-        String s= String.valueOf(x);
-        
-        int k=s.length();
-        for (int i=0;i<k/2+1;i++){
-            if(s.charAt(i)!=s.charAt(k-1-i)){
-                return false;
-            }
-            
+        int reverse =0;
+        int y=x;
+        while(y!=0){
+            reverse=reverse*10+y%10;
+            y/=10;
+
         }
-        return true;
+        if (reverse==x||x==0){
+            return true;
+        }
+        return false;
+
+        
         
     }
 }
